@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Tutorat.Model
 {
-    class Tutor
+    public class Tutor
     {
         public Tutor() { }
         
@@ -26,6 +26,6 @@ namespace Tutorat.Model
         [MaxLength(60), MinLength(1)]
         public string EmailAddress { get; set; }
 
-        public ICollection<TutoringSession> TutoringSessions { get; set; }
+        public virtual ICollection<TutoringSession> TutoringSessions { get; set; }
     }
 }

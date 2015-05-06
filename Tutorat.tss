@@ -2,7 +2,22 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
+      <string>c:\users\dom\documents\github\bd-tp3\tutorat\model\tutor.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\dom\documents\github\bd-tp3\tutorat\model\helpedstudent.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\dom\documents\github\bd-tp3\tutorat\model\tutoringsession.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>c:\users\dom\documents\github\bd-tp3\tutorat\repository\tutoringcontext.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
       <string>C:\Users\dom\Documents\GitHub\bd-tp3\Tutorat\Program.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\dom\AppData\Local\Temp\7028$EntityFramework.dll$v4.0.30319$NoDynamic\System.Data.Entity.DropCreateDatabaseIfModelChanges.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

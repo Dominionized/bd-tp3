@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Tutorat.Model
 {
-    class TutoringSession
+    public class TutoringSession
     {
         public TutoringSession(){}
         [Key]
@@ -21,9 +21,9 @@ namespace Tutorat.Model
         public TimeSpan LengthSession { get; set; }
 
         [Required]
-        public Tutor TutorId { get; set; }
+        public virtual Tutor TutorId { get; set; }
 
         [Required]
-        public HelpedStudent HelpedId { get; set; }
+        public virtual HelpedStudent HelpedId { get; set; }
     }
 }
