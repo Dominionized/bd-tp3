@@ -23,14 +23,13 @@ namespace Tutorat
             var tutoringSessions = ctx.TutoringSessions;
             foreach (var session in tutoringSessions)
             {
-                Console.WriteLine(session.LengthSession);
+                Console.WriteLine(session.ToString());
             }
 
             var helpedStudents = ctx.HelpedStudents;
             foreach (var stud in helpedStudents)
             {
                 Console.WriteLine(stud.ToString());
-                Console.WriteLine(stud.FirstName);
             }
 
             var tutors = ctx.Tutors;
