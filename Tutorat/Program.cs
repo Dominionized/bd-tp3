@@ -16,9 +16,11 @@ namespace Tutorat
             TutoringContext ctx = new TutoringContext();
             TutoringInitializer init = new TutoringInitializer();
 
+
             Database.SetInitializer<TutoringContext>(init);
 
             init.InitializeDatabase(ctx);
+            ctx.Database.Initialize(true);
 
             var tutoringSessions = ctx.TutoringSessions;
             foreach (var session in tutoringSessions)
