@@ -95,8 +95,45 @@ namespace Tutorat
 
         static void executeSectionC(TutoringContext ctx)
         {
-            Console.WriteLine("Requete 1");
+            protected static void SectionC(ProjetContext appContext)
+            {
+                Tutor tutorUP = new Tutor();
+                tutorUP = appContext.Tutor.Where(s => s.FirstName == "Gary" && s.LastName == "Bilodeau").FirstOrDefault<Tutor>();
+                if (tutorUP != null)
+                {
+                    tutorUP.EmailAddress = "gbilodeau@invalidemail.com";
+                }
+                HelpedStudent hsUP;
+                hsUP = appContext.HelpedStudent.Where(hs => hs.FirstName == "Marc" && hs.LastName == "Arsenault").FirstOrDefault<HelpedStudent>();
+                TutoringSession TutoringSessionHsUp = appContext.TutoringSession.Where(s => s.Id == hsUP.Id).FirstOrDefault();
+                appContext.TutoringSession.Remove(TutoringSessionHsUp);
+                appContext.HelpedStudent.Remove(hsUP);
+                appContext.SaveChanges();
+                HelpedStudent hsUP2;
+                hsUP2 = appContext.HelpedStudent.Where(hs => hs.FirstName == "Marc" && hs.LastName == "Arsenault").FirstOrDefault<HelpedStudent>();
+                TutoringSession TutoringSessionUP = new TutoringSession();
+                TutoringSessionUP = appContext.TutoringSession.Where(ts => ts.Helped.Id == hsUP2.Id).FirstOrDefault<TutoringSession>();
+                if (tutorUP != null)
+                {
+                    TutoringSessionUP.DateSession = new DateTime(2015, 04, 09, 11, 0, 0);
+                    TutoringSessionUP.TimeSession = TimeSpan.FromHours(2);
+                }
+                appContext.SaveChanges();
+                HelpedStudent HsJoin = new HelpedStudent();
+                HsJoin = appContext.HelpedStudent.Where(hs => hs.FirstName == "Samuel" && hs.LastName == "Vachon").FirstOrDefault<HelpedStudent>();
+                Tutor TutorJoin = new Tutor();
+                TutorJoin = appContext.Tutor.Where(hs => hs.FirstName == "Louis" && hs.LastName == "Vézina").FirstOrDefault<Tutor>();
 
+                TutoringSession newTutoringSession = new TutoringSession();
+                newTutoringSession.DateSession = new DateTime(2015, 06, 04, 10, 0, 0);
+                newTutoringSession.TimeSession = TimeSpan.FromHours(10);
+                newTutoringSession.LengthSession = TimeSpan.FromHours(2);
+                newTutoringSession.HelpedId = HsJoin;
+                newTutoringSession.TutorId = TutorJoin;
+
+                appContext.TutoringSession.Add(newTutoringSession);
+                appContext.SaveChanges();
+            }
         }
     }
 }
