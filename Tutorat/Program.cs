@@ -89,8 +89,29 @@ namespace Tutorat
                     prenom_aide = s.HelpedId.FirstName
                 });
 
-            var tutors = ctx.HelpedStudents
-                .Where(s => )
+            // Requete 3
+            var tutors = ctx.HelpedStudents.GroupJoin(ctx.TutoringSessions,
+                    helpStud => helpStud.Id,
+                    tutSess => tutSess.HelpedId,
+                    (helpStud, tutSess) => new
+                    {
+                        nom = helpStud.LastName,
+                        prenom = helpStud.FirstName,
+                        courriel = helpStud.EmailAddress
+                    })
+                    .Where(s => s.Count() = 0);
+
+            // Requete 4
+            var tutors = ctx.Tutors.Join(ctx.TutoringSessions,
+                tut => tut.Id,
+                tutSess => tutSess.TutorId,
+                (tut, tutSess) => new
+                {
+                    nom = tut.FirstName + " " + tut.LastName,
+                    dateSession = tutSess.DateSession
+                })
+                .Where(s => s.dateSession != DateTime(2015, 06, 02))
+                .GroupBy(s => s.nom);
         }
 
         static void executeSectionC(TutoringContext ctx)
