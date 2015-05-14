@@ -78,7 +78,8 @@ namespace Tutorat
             // Requete 2
             var tutors = ctx.TutoringSessions
                 .Where(sess => sess.DateSession > DateTime.Now())
-                .Select(s => new {
+                .Select(s => new
+                {
                     nom = s.TutorId.LastName,
                     prenom = s.TutorId.FirstName,
                     date = s.DateSession,
@@ -86,7 +87,10 @@ namespace Tutorat
                     duree = s.LengthSession,
                     nom_aide = s.HelpedId.LastName,
                     prenom_aide = s.HelpedId.FirstName
-                })
+                });
+
+            var tutors = ctx.HelpedStudents
+                .Where(s => )
         }
 
         static void executeSectionC(TutoringContext ctx)
