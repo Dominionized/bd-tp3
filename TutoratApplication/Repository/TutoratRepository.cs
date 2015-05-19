@@ -14,7 +14,7 @@ namespace TutoratApplication.Repository
         {
             
         }
-        public IQueryable<T> GetById()
+        public IQueryable<T> GetById(int Id)
         {
             return Context.Set<T>().FirstOrDefault(x => x.Id == Id);
         }
@@ -24,29 +24,24 @@ namespace TutoratApplication.Repository
             return Context.Set<T>().AsQueryable();
         }
 
-        public T SingleId()
-        {
-
-        }
-
         public void Add(T entity)
         {
-
+            Context.Set<T>.Add(entity);
         }
 
         public void Insert(T entity)
         {
-            
+            Context.Set<T>.Insert(entity);
         }
 
         public void Delete(T entity)
         {
-
+            Context.Set<T>.Delete(entity);
         }
 
         public void DeleteAll()
         {
-
+            Context.Set<T>.DeleteAll();
         }
     }
 }

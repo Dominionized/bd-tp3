@@ -10,8 +10,6 @@ namespace TutoratApplication.Repository
     {
         IQueryable<T> GetAll();
 
-        T SingleId();
-
         void Add(T entity);
 
         void Insert(T entity);

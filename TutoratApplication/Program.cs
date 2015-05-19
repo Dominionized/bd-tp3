@@ -10,6 +10,8 @@ namespace TutoratApplication
     {
         static void Main(string[] args)
         {
+            TutoringContext ctx = new TutoringContext();
+            TutoringApplication app = new TutoringApplication(ctx);
         }
     }
 }
