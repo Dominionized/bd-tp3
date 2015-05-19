@@ -7,12 +7,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Tutorat.Model
 {
-    public class TutoringSession
+    public class TutoringSession : Entity
     {
-        public TutoringSession(){}
-        [Key]
-        public int Id { get; set; }
-
         [Required]
         public DateTime DateSession { get; set; }
         [Required]

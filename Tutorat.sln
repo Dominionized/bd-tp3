@@ -12,6 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{457A05
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutoratApplication", "TutoratApplication\TutoratApplication.csproj", "{67F2B94D-593D-40EC-A530-0093850BF09E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{54782D29-4D10-48C2-8500-A25D07A1F053} = {54782D29-4D10-48C2-8500-A25D07A1F053}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +27,10 @@ Global
 		{54782D29-4D10-48C2-8500-A25D07A1F053}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54782D29-4D10-48C2-8500-A25D07A1F053}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54782D29-4D10-48C2-8500-A25D07A1F053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67F2B94D-593D-40EC-A530-0093850BF09E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67F2B94D-593D-40EC-A530-0093850BF09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67F2B94D-593D-40EC-A530-0093850BF09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67F2B94D-593D-40EC-A530-0093850BF09E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

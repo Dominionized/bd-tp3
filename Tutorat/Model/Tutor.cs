@@ -7,13 +7,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Tutorat.Model
 {
-    public class Tutor
+    public class Tutor : Entity
     {
-        public Tutor() { }
-        
-        [Key]
-        public int Id { get; set; }
-
         [Required]
         [MaxLength(30), MinLength(1)]
         public string LastName { get; set; }
